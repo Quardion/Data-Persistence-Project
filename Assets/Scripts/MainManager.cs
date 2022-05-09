@@ -12,16 +12,23 @@ public class MainManager : MonoBehaviour
 
     public Text ScoreText;
     public GameObject GameOverText;
-    
+    public string playerName;
+
     private bool m_Started = false;
     private int m_Points;
     
     private bool m_GameOver = false;
 
+    static int HighScore;
+
     
     // Start is called before the first frame update
     void Start()
     {
+
+        // this gets the data from DataManager (playername now, highscore in the future)
+        playerName = DataManager.Instance.playerName;
+
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
